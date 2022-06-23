@@ -9,12 +9,14 @@ function App() {
         <div className="logo__container">
           <img src={logo} className="logo__img" />
           <div className="logo__text">Админ панель</div>
+          
           <div className="container__exit">
             <a href="#" className="button__exit">
               Выйти
             </a>
           </div>
         </div>
+        <div className="hello__widget">Здравствуйте, name!</div>
         <div className="table__center">
           <table class="table">
             <thead>
