@@ -1,7 +1,26 @@
 import "../styles/main.css";
 import logo from "../resources/logo.png";
+import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+
+
+const baseURL = "http://localhost:8080/pupil/2";
+
 
 function Main() {
+  const [pupil, setPupil] = useState(null)
+
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      console.log(response.data)
+      setPupil(response.data)
+    });
+  }, [])
+
+  if (!pupil) return null;
+
+
+
   document.title = "Админ панель — myliss";
   return (
     <div className="container__wrapper">
@@ -31,8 +50,8 @@ function Main() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Ильючес</td>
+            {/* <tr>
+                <td>jdjwjd</td>
                 <td>Орсичев</td>
                 <td>
                   <a href="#" className="td__phone">
@@ -47,7 +66,25 @@ function Main() {
                     i
                   </a>
                 </td>
+              </tr> */}
+              <tr>
+                <td>{pupil.name}</td>
+                <td>{pupil.surname}</td>
+                <td>
+                  <a href="#" className="td__phone">
+                    +7{pupil.phone}
+                  </a>
+                </td>
+                <td>{pupil.email}</td>
+                <td>{pupil.cost} ₽/час</td>
+                <td>{pupil.grade}</td>
+                <td>
+                  <a href="#" className="button__edit">
+                    i
+                  </a>
+                </td>
               </tr>
+
             </tbody>
           </table>
         </div>
