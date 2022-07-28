@@ -35,7 +35,7 @@ function Main() {
             </a>
           </div>
         </div>
-        <div className="hello__widget">Здравствуйте, name!</div>
+        <div className="hello__widget">Здравствуйте, {pupil.name}!</div>
         <div className="table__center">
           <table class="table">
             <thead>
