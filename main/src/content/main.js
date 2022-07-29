@@ -2,28 +2,31 @@ import "../styles/main.css";
 import logo from "../resources/logo.png";
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
+import Navbar from "./SideBar/Navbar";
 
 
 const baseURL = "http://localhost:8080/pupil/2";
 
 
 function Main() {
-  const [pupil, setPupil] = useState(null)
+  // const [pupil, setPupil] = useState(null)
 
-  useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      console.log(response.data)
-      setPupil(response.data)
-    });
-  }, [])
+  // useEffect(() => {
+  //   axios.get(baseURL).then((response) => {
+  //     console.log(response.data)
+  //     setPupil(response.data)
+  //   });
+  // }, [])
 
-  if (!pupil) return null;
+  // if (!pupil) return null;
 
 
 
   document.title = "Админ панель — myliss";
   return (
-    <div className="container__wrapper">
+  <>
+        <Navbar />
+        <div className="container__wrapper">
       <div className="container__padding">
         <div className="logo__container">
           <img src={logo} className="logo__img" />
@@ -35,7 +38,7 @@ function Main() {
             </a>
           </div>
         </div>
-        <div className="hello__widget">Здравствуйте, {pupil.name}!</div>
+        <div className="hello__widget">Здравствуйте, Юлиана!</div>
         <div className="table__center">
           <table class="table">
             <thead>
@@ -50,7 +53,7 @@ function Main() {
               </tr>
             </thead>
             <tbody>
-            {/* <tr>
+            <tr>
                 <td>jdjwjd</td>
                 <td>Орсичев</td>
                 <td>
@@ -66,8 +69,8 @@ function Main() {
                     i
                   </a>
                 </td>
-              </tr> */}
-              <tr>
+              </tr>
+              {/* <tr>
                 <td>{pupil.name}</td>
                 <td>{pupil.surname}</td>
                 <td>
@@ -83,7 +86,7 @@ function Main() {
                     i
                   </a>
                 </td>
-              </tr>
+              </tr> */}
 
             </tbody>
           </table>
@@ -95,6 +98,8 @@ function Main() {
         </a>
       </div>
     </div>
+  </>
+    
   );
 }
 
