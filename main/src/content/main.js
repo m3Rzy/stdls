@@ -3,6 +3,8 @@ import logo from "../resources/logo.png";
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
 import Navbar from "./SideBar/Navbar";
+import '../fonts.css'
+
 
 
 const baseURL = "http://localhost:8080/pupil/2";
@@ -54,8 +56,8 @@ function Main() {
             </thead>
             <tbody>
             <tr>
-                <td>jdjwjd</td>
-                <td>Орсичев</td>
+                <td>Имя</td>
+                <td>Фамилия</td>
                 <td>
                   <a href="#" className="td__phone">
                     +79533658890

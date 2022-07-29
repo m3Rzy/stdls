@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Main } from './content/main';
 
-
 function App() {
   return (
         <Routes>
