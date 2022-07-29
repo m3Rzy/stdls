@@ -32,13 +32,13 @@ function Main() {
       <div className="container__padding">
         <div className="logo__container">
           <img src={logo} className="logo__img" />
-          <div className="logo__text">Админ панель</div>
+          <div className="logo__text">Главная страница</div>
           
-          <div className="container__exit">
+          {/* <div className="container__exit">
             <a href="#" className="button__exit">
               Выйти
             </a>
-          </div>
+          </div> */}
         </div>
         <div className="hello__widget">Здравствуйте, Юлиана!</div>
         <div className="table__center">
