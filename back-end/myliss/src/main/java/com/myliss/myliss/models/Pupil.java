@@ -24,4 +24,7 @@ public class Pupil {
     private String email;
     private int cost;
     private int grade;
+    private String parent;
+    private String parent_number;
+    private String rate;
 }
