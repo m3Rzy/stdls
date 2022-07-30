@@ -16,10 +16,10 @@ const columns = [
   { field: 'name', headerName: 'Имя', sortable: false},
   { field: 'surname', headerName: 'Фамилия', width: 110, sortable: false},
   { field: 'phone', headerName: 'Номер телефона ученика', width: 150, sortable: false},
-  { field: 'email', headerName: 'Почта ученика', width: 140, sortable: false},
+  { field: 'email', headerName: 'Почта ученика', width: 210, sortable: false},
   { field: 'cost', headerName: 'Стоимость за урок', width: 150},
   { field: 'grade', headerName: 'Класс'},
-  { field: 'parent', headerName: 'ФИО родителя', sortable: false, width: 200},
+  { field: 'parent', headerName: 'ФИО родителя', sortable: false, width: 210},
   { field: 'parent_number', headerName: 'Номер телефона родителя', width: 170, sortable: false},
   { field: 'rate', headerName: 'Тариф', sortable: false}
 ];
@@ -58,13 +58,13 @@ export function Journal() {
     <Navbar/>
     <h1 className='h1__center'>Журнал</h1>
     <div className='center__table'>
-        <div style={{ height: '50vh', minWidth: '70%', zIndex: 1 }}>
+        <div style={{ height: 400, minWidth: '75%', zIndex: 1 }}>
         <DataGrid
             // rows={rows}
             rows={rows}
             columns={columns}
-            pageSize={10}
-            rowsPerPageOptions={[10]}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
             checkboxSelection
         />
         </div>
