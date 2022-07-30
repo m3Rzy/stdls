@@ -6,24 +6,7 @@ import Navbar from "./SideBar/Navbar";
 import '../fonts.css'
 
 
-
-const baseURL = "http://localhost:8080/pupil/2";
-
-
 function Main() {
-  // const [pupil, setPupil] = useState(null)
-
-  // useEffect(() => {
-  //   axios.get(baseURL).then((response) => {
-  //     console.log(response.data)
-  //     setPupil(response.data)
-  //   });
-  // }, [])
-
-  // if (!pupil) return null;
-
-
-
   document.title = "Админ панель — myliss";
   return (
   <>

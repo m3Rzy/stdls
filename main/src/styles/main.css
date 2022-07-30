@@ -8,6 +8,22 @@ html {
     font-family: "SFProDisplay-Regular";
 }
 
+.center__table {
+    margin: 0 auto;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1__center {
+    margin: 0 auto;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container__exit {
     float: right;
     margin-left: 20%;
