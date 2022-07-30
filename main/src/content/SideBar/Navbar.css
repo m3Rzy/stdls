@@ -4,7 +4,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    z-index: 10000;
+    z-index: 100;
   }
   
   html {
@@ -19,9 +19,12 @@
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
+    z-index: 100;
+
   }
   
   .nav-menu {
+    z-index: 10000;
     background-color: #1d1d1f;
     width: 320px;
     height: 100vh;

@@ -13,32 +13,32 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Статистика',
-    path: '/stats',
-    icon: <IoIcons.IoMdStats />,
-    cName: 'nav-text'
-  },
-  {
     title: 'Журнал',
     path: '/list',
     icon: <BiIcons.BiBookBookmark />,
     cName: 'nav-text'
   },
   {
+    title: 'Статистика',
+    path: '/',
+    icon: <IoIcons.IoMdStats />,
+    cName: 'nav-text'
+  },
+  {
     title: 'Уведомления',
-    path: '/notifications',
+    path: '/',
     icon: <IoIcons.IoIosNotifications />,
     cName: 'nav-text'
   },
   {
     title: 'Настройки',
-    path: '/settings',
+    path: '/',
     icon: <AiIcons.AiFillSetting />,
     cName: 'nav-text'
   },
   {
     title: 'Обратная связь',
-    path: '/feedback',
+    path: '/',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   }

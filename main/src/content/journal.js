@@ -55,10 +55,10 @@ export function Journal() {
   }))
   return (    
     <>
-    <Navbar />
+    <Navbar/>
     <h1 className='h1__center'>Журнал</h1>
     <div className='center__table'>
-        <div style={{ height: '50vh', minWidth: '70%', zIndex: -1 }}>
+        <div style={{ height: '50vh', minWidth: '70%', zIndex: 1 }}>
         <DataGrid
             // rows={rows}
             rows={rows}
