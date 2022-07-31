@@ -19,7 +19,8 @@ const columns = [
   { field: 'grade', headerName: 'Класс'},
   { field: 'parent', headerName: 'ФИО родителя', sortable: false, width: 210},
   { field: 'parent_number', headerName: 'Номер телефона родителя', width: 170, sortable: false},
-  { field: 'rate', headerName: 'Тариф', sortable: false}
+  { field: 'rate', headerName: 'Тариф', sortable: false },
+  { field: 'button__delete', sortable: false, headerName: ""}
 ];
 
 export function Journal() {
@@ -49,26 +50,31 @@ export function Journal() {
     grade: row.grade + ' класс',
     parent: row.parent,
     parent_number: '+7' + row.parent_number,
-    rate: row.rate
-
+    rate: row.rate,
+    button__delete: <button>Удалить</button>
   }))
   return (    
     <>
     <Navbar/>
     <h1 className='h1__center'>Журнал</h1>
     <div className='center__table'>
-        <div style={{ height: 400, minWidth: '75%', zIndex: 1 }}>
+        <div style={{ height: 650, minWidth: '85%', zIndex: 1 }}>
         <DataGrid
             // rows={rows}
             rows={rows}
             columns={columns}
-            pageSize={5}
-            rowsPerPageOptions={[5]}
+            pageSize={10}
+            rowsPerPageOptions={[10]}
             checkboxSelection
         />
         </div>
     </div>
-    
+    <div className='add__button' style={{marginTop: '5vh'}}>
+      <a>Добавить ученика</a>
+    </div>
+    <div className='remove__button' style={{marginTop: '5vh', marginBottom: '5vh'}}>
+      <a className='krestik'>╳</a>
+    </div>
     </>
     
   );

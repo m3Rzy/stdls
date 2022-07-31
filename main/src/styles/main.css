@@ -30,6 +30,46 @@ html {
     align-items: center;
 }
 
+.add__button {
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9em 1em;
+    border-radius: 1em;
+    background-color: green;
+    width: 9em;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.add__button:hover {
+    box-shadow:  0 0 3em 0.1em green;
+    transition: 0.4s;
+}
+
+.krestik {
+    /* transform: rotate(45deg); */
+    font-size: 0.5em;
+    font-weight: bolder;
+}
+
+.remove__button {
+    margin: 0 auto;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10em;
+    background-color: red;
+    width: 2.2em;
+    height: 2.2em;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
 .refresh__button {
     margin: 0 auto;
     display: flex;
@@ -51,7 +91,7 @@ html {
 .refresh__button:hover{
     opacity: 100%;
     transition: 0.4s;
-    box-shadow:  0 0 5em 0.5em #0071e3;
+    /* box-shadow:  0 0 10em 0.2em #0071e3; */
 }
 
 .h1__center {
