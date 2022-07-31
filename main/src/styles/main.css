@@ -40,15 +40,15 @@ html {
     background-color: #0071e3;
     width: 3rem;
     cursor: pointer;
+    transition: 0.4s;
+
 }
 .refresh__button a {
     color: white;
-    opacity: 90%;
-    transition: 0.4s;
     cursor: pointer;
 }
 
-.refresh__button a:hover {
+.refresh__button:hover{
     opacity: 100%;
     transition: 0.4s;
     box-shadow:  0 0 5em 0.5em #0071e3;

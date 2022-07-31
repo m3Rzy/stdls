@@ -13,8 +13,8 @@ function Error() {
                 <p className='h1__center' style={{ marginTop: '12vh', fontSize: '3em' }}>Нет подключения к серверу</p>
                 <p className='error__h2'>[ Ошибка 404 ]</p>
                 <img src={laser} className="h1__center" style={{ height: '25vh', marginTop: '5vh' }} />
-                <div className='refresh__button' style={{marginTop: '10vh'}}>
-                    <a onClick={updatePage}>Обновить</a>
+                <div className='refresh__button' style={{marginTop: '10vh'}} onClick={updatePage}>
+                    <a>Обновить</a>
                 </div>
             </div>
         </>
