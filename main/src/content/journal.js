@@ -4,7 +4,7 @@ import Navbar from "./SideBar/Navbar";
 import "../styles/main.css";
 import '../fonts.css'
 import kot from "../resources/laser.gif";
-
+import { Error } from './pages/error' 
 import axios from 'axios'
 
 
@@ -39,8 +39,7 @@ export function Journal() {
   if (!pupil) return (
     <>
         <Navbar />
-        <h1 className='h1__center' style={{marginTop: '30vh'}}>Нет связи с сервером. Ошибка 404.</h1>
-        <img src={kot} className="h1__center" style={{height: '25vh', marginTop: 90}} />
+        <Error />
 
     </>
   );

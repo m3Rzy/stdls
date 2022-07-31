@@ -8,6 +8,11 @@ html {
     font-family: "SFProDisplay-Regular";
 }
 
+.error__h2 {
+    font-size: 3em;
+    color: red;
+}
+
 .center__table {
     margin: 0 auto;
     margin-top: 1%;
@@ -17,7 +22,40 @@ html {
     font-family: 'SFProDisplay-Regular';
 }
 
+.error__h2 {
+    margin: 0 auto;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.refresh__button {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7em 1.5em;
+    border-radius: 0.75em;
+    background-color: #0071e3;
+    width: 3rem;
+    cursor: pointer;
+}
+.refresh__button a {
+    color: white;
+    opacity: 90%;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.refresh__button a:hover {
+    opacity: 100%;
+    transition: 0.4s;
+    box-shadow:  0 0 5em 0.5em #0071e3;
+}
+
 .h1__center {
+    font-weight: 600;
     margin: 0 auto;
     margin-top: 1%;
     display: flex;
