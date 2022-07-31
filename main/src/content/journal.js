@@ -8,11 +8,7 @@ import { Error } from './pages/error'
 import axios from 'axios'
 
 
-const baseURL = "http://localhost:8080/pupils";
 document.title = "Журнал — myliss";
-
-
-
 const columns = [
   { field: 'id', headerName: 'ID', width: 70, },
   { field: 'name', headerName: 'Имя', sortable: false},
@@ -30,8 +26,7 @@ export function Journal() {
     const [pupil, setPupil] = useState(null)
 
   useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      console.log(response.data)
+    axios.get("http://localhost:8080/pupils").then((response) => {
       setPupil(response.data)
     });
   }, [])
@@ -42,7 +37,7 @@ export function Journal() {
         <Error />
 
     </>
-  );
+  )
 
   const rows = pupil.map((row) => ({
     id: row.id,
