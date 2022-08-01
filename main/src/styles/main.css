@@ -56,6 +56,26 @@ html {
     font-weight: bolder;
 }
 
+.edit__button {
+    margin: 0 auto;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10em;
+    background-color: orange;
+    width: 2.2em;
+    height: 2.2em;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.edit__button:hover {
+    transition: 0.1s;
+    background-color: rgb(216, 140, 0);
+    color: rgb(245, 245, 245);
+}
+
 .remove__button {
     margin: 0 auto;
     display: flex;
@@ -68,6 +88,12 @@ html {
     height: 2.2em;
     cursor: pointer;
     transition: 0.4s;
+}
+
+.remove__button:hover {
+    transition: 0.1s;
+    background-color: rgb(197, 0, 0);
+    color: rgb(245, 245, 245);
 }
 
 .refresh__button {
