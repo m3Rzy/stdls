@@ -31,4 +31,5 @@ public class PupilController {
     {
         return service.getPupilById(id);
     }
+
 }
