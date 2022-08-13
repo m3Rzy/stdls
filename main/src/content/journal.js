@@ -5,7 +5,6 @@ import '../fonts.css'
 import { Error } from './pages/error' 
 import axios from 'axios'
 
-import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
@@ -13,7 +12,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Link } from 'react-router-dom';
 
 
 document.title = "Журнал — myliss";
@@ -21,16 +19,29 @@ document.title = "Журнал — myliss";
 
 
 export function Journal() {
-    const [pupil, setPupil] = useState(null)
+    const [pupil, setPupil] = useState([])
 
   useEffect(() => {
-    axios.get("http://localhost:8080/pupils").then((response) => {
-      setPupil(response.data)
-    });
+    const getPosts = async () => {
+        const { data: res } = await axios.get("http://localhost:8080/pupils")
+        setPupil(res)
+    };
+    getPosts();
   }, [])
-  
 
-  
+    const handleDelete = async (id, name, surname) => {
+      if(window.confirm("Вы точно хотите удалить " + name + " " + surname + "?")) {
+        await axios.delete(`http://localhost:8080/delete/${id}`)
+        const newList = pupil.filter((pupil) => {
+          return pupil.id !== id;
+        });
+    
+        setPupil(newList);
+      } else {
+        window.Error("Отменяем удаление!")
+      }
+      
+    };
 
   if (!pupil) return (
     <>
@@ -39,6 +50,7 @@ export function Journal() {
 
     </>
   )
+
   return (    
     <>
     <Navbar/>
@@ -79,18 +91,14 @@ export function Journal() {
               <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">+7{row.parent_number}</TableCell >
               <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">{row.rate}</TableCell >
               <TableCell style={{fontFamily: "SFProDisplay-Regular"}}>
-                  <Link to={'/edit/'+row.id}>
                     <div className='edit__button'>
                         <a>?</a>
                     </div>
-                  </Link>
               </TableCell >
               <TableCell style={{fontFamily: "SFProDisplay-Regular"}}>
-                <Link to={'/delete/'+row.id}>
-                  <div className='remove__button'>
-                      <a className='krestik'>╳</a>
+                  <div className='remove__button' onClick={() => handleDelete(row.id, row.name, row.surname)}>
+                      <a className='krestik'>╳ {pupil.id}</a>
                   </div>
-                </Link>
               </TableCell >
             </TableRow>
           ))}

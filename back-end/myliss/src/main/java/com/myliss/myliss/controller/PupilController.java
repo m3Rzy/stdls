@@ -21,7 +21,7 @@ public class PupilController {
     }
 
     @GetMapping("/pupils")
-    public List<Pupil> fintAll()
+    public List<Pupil> findAll()
     {
         return service.getPupils();
     }
@@ -32,4 +32,15 @@ public class PupilController {
         return service.getPupilById(id);
     }
 
+    @PutMapping("/edit")
+    public Pupil updatePupil(@RequestBody Pupil pupil)
+    {
+        return service.updatePupil(pupil);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deletePupil(@PathVariable int id)
+    {
+        return service.deletePupil(id);
+    }
 }
