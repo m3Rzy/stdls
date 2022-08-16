@@ -43,7 +43,7 @@ export function Journal() {
       
     };
 
-  if (!pupil) return (
+  if (!pupil || pupil == 0) return (
     <>
         <Navbar />
         <Error />
@@ -56,24 +56,24 @@ export function Journal() {
     <Navbar/>
     <h1 className='h1__center'>Журнал</h1>
     <div className='center__table'>
-        <div style={{ height: 650, minWidth: '85%', zIndex: 1 }}>
+        <div style={{ height: 650, minWidth: '85%', zIndex: 1, marginTop: '5vh'}}>
         <TableContainer component={Paper} style={{borderRadius: '50'}}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
           {/* <TableCell style={{fontFamily: "SFProDisplay-Regular"}}>ID</TableCell > */}
-          <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right" >Имя</TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">Фамилия</TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">Номер телефона ученика</TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">Почта ученика</TableCell >
+          <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right" >Имя</TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right">Фамилия</TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right">Номер телефона ученика</TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right">Почта ученика</TableCell >
             {/* <TableCell  align="right">Protein&nbsp;(g)</TableCell > */}
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">Цена</TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">Класс</TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">ФИО родителя</TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">Номер телефона родителя</TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">Тариф</TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right"></TableCell >
-            <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right"></TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right">Цена</TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right">Класс</TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right">ФИО родителя</TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right">Номер телефона родителя</TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right">Тариф</TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right"></TableCell >
+            <TableCell style={{fontFamily: "SFProDisplay-Regular", fontWeight: 700, fontSize: 16}} align="right"></TableCell >
 
           </TableRow>
         </TableHead>
@@ -81,21 +81,21 @@ export function Journal() {
           {pupil.map((row) => (
             <TableRow key={row.id}>
               {/* <TableCell  component="th" scope="row">{row.id}</TableCell > */}
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">{row.name}</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">{row.surname}</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">+7{row.phone}</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">{row.email}</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">{row.cost} ₽</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">{row.grade} класс</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">{row.parent}</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">+7{row.parent_number}</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}} align="right">{row.rate}</TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}}>
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">{row.name}</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">{row.surname}</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">+7{row.phone}</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">{row.email}</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">{row.cost} ₽</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">{row.grade} класс</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">{row.parent}</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">+7{row.parent_number}</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}} align="right">{row.rate}</TableCell >
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}}>
                     <div className='edit__button'>
                         <a>?</a>
                     </div>
               </TableCell >
-              <TableCell style={{fontFamily: "SFProDisplay-Regular"}}>
+              <TableCell style={{fontFamily: "SFProDisplay-Regular", fontSize: 16}}>
                   <div className='remove__button' onClick={() => handleDelete(row.id, row.name, row.surname)}>
                       <a className='krestik'>╳ {pupil.id}</a>
                   </div>
@@ -107,7 +107,7 @@ export function Journal() {
     </TableContainer>
     </div>
     </div>
-    <div className='add__button' style={{marginTop: '5vh'}}>
+    <div className='add__button' style={{marginTop: '3vh'}}>
       <a>Добавить ученика</a>
     </div>    
     </>
